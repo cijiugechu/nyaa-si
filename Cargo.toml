@@ -1,5 +1,13 @@
 [package]
 name = "nyaa-si"
+readme = "README.md"
+license = "Apache-2.0"
+documentation = "https://docs.rs/nyaa-si"
+repository = "https://github.com/cijiugechu/nyaa-si"
+authors = ["cijiugechu <cijiugechu@gmail.com>"]
+description = "An async Nyaa client for Rust"
+keywords = ["nyaa", "api", "client"]
+categories = ["api-bindings", "network-programming", "web-programming"]
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.75.0"

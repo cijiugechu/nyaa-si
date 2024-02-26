@@ -1,6 +1,8 @@
 # `nyaa-si`
 
-This API is an Unofficial Nyaa API rewritten in Rust.
+[![Cargo](https://img.shields.io/crates/v/nyaa-si.svg)](https://crates.io/crates/nyaa-si) [![Documentation](https://docs.rs/nyaa-si/badge.svg)](https://docs.rs/nyaa-si)
+
+An async Nyaa client for Rust.
 
 ## Usage
 
