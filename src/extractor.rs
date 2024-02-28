@@ -1,6 +1,5 @@
-use std::sync::OnceLock;
-
 use scraper::{ElementRef, Html, Selector};
+use std::sync::OnceLock;
 
 use crate::error::{Error, Result};
 use crate::model::{Size, Torrent};
@@ -20,7 +19,7 @@ pub fn extract(html: &str, base_url: &str) -> Result<Vec<Torrent>> {
     let selector = ITEM_SELECTOR
         .get_or_init(|| Selector::parse("table>tbody>tr").unwrap());
     let items = document.select(selector);
-    let mut res_vec: Vec<Torrent> = vec![];
+    let mut res_vec: Vec<Torrent> = Vec::with_capacity(75);
 
     for item in items {
         let title = extract_title(item)?;
