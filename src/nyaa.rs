@@ -1,5 +1,6 @@
 use std::fmt::Display;
 use tokio::task::spawn_blocking;
+use tracing::{event, Level};
 
 use crate::{
     category::Category, client::Client, error::Result, extractor::extract,
@@ -94,8 +95,11 @@ impl Client<NyaaCategory> for NyaaClient {
     ///```
     #[doc = include_str!("../examples/custom_query.rs")]
     ///```
+    #[tracing::instrument(skip(self))]
     async fn get(&self, query: &Query<NyaaCategory>) -> Result<Vec<Torrent>> {
         let url = format!("{}/?{}", Self::BASE_URL, query);
+
+        event!(Level::DEBUG, "url = {}", url);
 
         let res = self.inner.get(url).send().await?.text().await?;
 

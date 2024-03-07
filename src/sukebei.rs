@@ -1,5 +1,6 @@
 use std::fmt::Display;
 use tokio::task::spawn_blocking;
+use tracing::{event, Level};
 
 use crate::{
     category::Category, client::Client, error::Result, extractor::extract,
@@ -61,11 +62,14 @@ impl SukebeiClient {
 impl Client<SukebeiCategory> for SukebeiClient {
     const BASE_URL: &'static str = "https://sukebei.nyaa.si";
 
+    #[tracing::instrument(skip(self))]
     async fn get(
         &self,
         query: &Query<SukebeiCategory>,
     ) -> Result<Vec<Torrent>> {
         let url = format!("{}/?{}", Self::BASE_URL, query);
+
+        event!(Level::DEBUG, "url = {}", url);
 
         let res = self.inner.get(url).send().await?.text().await?;
 
