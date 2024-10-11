@@ -60,7 +60,7 @@ impl Display for Sort {
         match self {
             Sort::Comments => write!(f, "comments"),
             Sort::Size => write!(f, "size"),
-            Sort::Date => write!(f, "date"),
+            Sort::Date => write!(f, "id"),
             Sort::Seeders => write!(f, "seeders"),
             Sort::Leechers => write!(f, "leechers"),
             Sort::Downloads => write!(f, "downloads"),
