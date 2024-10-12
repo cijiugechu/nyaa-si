@@ -186,7 +186,7 @@ impl<C: Category> QueryBuilder<C> {
             sort: self.sort,
             sort_order: self.sort_order,
             filter: self.filter,
-            category: C::default(),
+            category: self.category,
         }
     }
 
@@ -218,5 +218,21 @@ impl<C: Category> QueryBuilder<C> {
     pub fn category(mut self, category: C) -> QueryBuilder<C> {
         self.category = category;
         self
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::NyaaCategory;
+
+    #[test]
+    fn test_build() {
+        let query = QueryBuilder::new()
+            .search("frieren")
+            .sort(Sort::Date)
+            .category(NyaaCategory::Anime)
+            .build();
+        assert_eq!(query.to_string(), format!("q={}&p={}&s={}&o={}&f={}&c={}", "frieren", 1, "id", "desc", 0, "1_0"))
     }
 }
