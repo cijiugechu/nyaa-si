@@ -108,7 +108,7 @@ impl Display for Filter {
 }
 
 #[derive(Debug, PartialEq, Clone, Hash)]
-pub struct Query<C: Category> {
+pub struct Query<C> {
     search: String,
     page: u32,
     sort: Sort,
@@ -152,7 +152,7 @@ where
 }
 
 #[derive(Debug, Clone, PartialEq)]
-pub struct QueryBuilder<C: Category> {
+pub struct QueryBuilder<C> {
     search: String,
     page: u32,
     sort: Sort,
