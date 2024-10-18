@@ -87,9 +87,9 @@ impl From<u8> for Filter {
     }
 }
 
-impl From<Filter> for u8 {
-    fn from(i: Filter) -> Self {
-        match i {
+impl Into<u8> for Filter {
+    fn into(self) -> u8 {
+        match self {
             Filter::NoFilter => 0,
             Filter::NoRemakes => 1,
             Filter::TrustedOnly => 2,
