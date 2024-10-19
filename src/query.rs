@@ -87,6 +87,7 @@ impl From<u8> for Filter {
     }
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<u8> for Filter {
     fn into(self) -> u8 {
         match self {
