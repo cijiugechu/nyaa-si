@@ -9,8 +9,8 @@ description = "An async Nyaa client for Rust"
 keywords = ["nyaa", "api", "client"]
 categories = ["api-bindings", "network-programming", "web-programming"]
 version = "0.2.2"
-edition = "2021"
-rust-version = "1.75.0"
+edition = "2024"
+rust-version = "1.85.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
