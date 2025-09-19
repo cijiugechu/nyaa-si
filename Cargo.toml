@@ -8,7 +8,7 @@ authors = ["cijiugechu <cijiugechu@gmail.com>"]
 description = "An async Nyaa client for Rust"
 keywords = ["nyaa", "api", "client"]
 categories = ["api-bindings", "network-programming", "web-programming"]
-version = "0.2.2"
+version = "0.3.0"
 edition = "2024"
 rust-version = "1.85.0"
 
