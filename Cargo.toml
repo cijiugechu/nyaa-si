@@ -15,12 +15,12 @@ rust-version = "1.75.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-scraper = { version = "0.20" }
+scraper = { version = "0.24" }
 reqwest = { version = "0.12", features = ["gzip", "brotli", "deflate"] }
 thiserror = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 chrono = { version = "0.4", features = ["serde"] }
-tokio  = { version = "1.40" }
+tokio  = { version = "1" }
 tracing = { version = "0.1" }
 
 [dev-dependencies]
